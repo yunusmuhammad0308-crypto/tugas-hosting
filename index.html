@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeTIK Jombang | Pesantren IT</title>
+    
+    <!-- Tailwind CSS (via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Konfigurasi Font & Warna Dasar */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        /* Animasi Latar Belakang Gradien */
+        .animate-gradient-bg {
+            background: linear-gradient(-45deg, #0f172a, #134e4a, #1e3a8a, #0f172a);
+            background-size: 400% 400%;
+            animation: gradientMove 15s ease infinite;
+        }
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Efek Glassmorphism untuk Kartu */
+        .glass-card {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s ease;
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px -10px rgba(45, 212, 191, 0.3);
+            border-color: rgba(45, 212, 191, 0.4);
+            background: rgba(30, 41, 59, 0.8);
+        }
+
+        /* Animasi Scroll (Reveal) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Efek Glow Dekoratif */
+        .glow-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            z-index: 0;
+            opacity: 0.4;
+            animation: pulseGlow 8s infinite alternate;
+        }
+        @keyframes pulseGlow {
+            0% { transform: scale(1); opacity: 0.3; }
+            100% { transform: scale(1.2); opacity: 0.5; }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-teal-500 selection:text-white">
+
+    <!-- HERO SECTION (Meniru desain Screenshot) -->
+    <header class="relative min-h-screen flex items-center justify-center animate-gradient-bg overflow-hidden px-4">
+        <!-- Dekorasi Background -->
+        <div class="glow-blob bg-teal-600 w-96 h-96 top-0 left-[-10%]"></div>
+        <div class="glow-blob bg-blue-700 w-96 h-96 bottom-0 right-[-10%] delay-700"></div>
+        
+        <!-- Overlay Pattern (Opsional agar tidak terlalu polos) -->
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+
+        <!-- Konten Hero -->
+        <div class="relative z-10 text-center max-w-5xl mx-auto mt-20 md:mt-0">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight reveal active">
+                Welcome to <span class="text-teal-400">PeTIK Jombang</span>
+            </h1>
+            <p class="text-lg md:text-2xl font-light text-gray-300 mb-12 reveal active" style="transition-delay: 200ms;">
+                Pesantren yang Melahirkan Santri dengan Kemampuan IT
+            </p>
+
+            <!-- Tombol Aksi -->
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4 reveal active" style="transition-delay: 400ms;">
+                <a href="#" class="w-full md:w-auto px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded font-semibold transition-all hover:scale-105 hover:shadow-[0_0_15px_rgba(37,99,235,0.5)] flex items-center justify-center gap-2">
+                    <i class="fas fa-user-plus"></i> PENDAFTARAN MAHASANTRI BARU
+                </a>
+                <a href="#" class="w-full md:w-auto px-6 py-3 bg-green-600 hover:bg-green-500 text-white rounded font-semibold transition-all hover:scale-105 hover:shadow-[0_0_15px_rgba(22,163,74,0.5)] flex items-center justify-center gap-2">
+                    <i class="fas fa-map-marker-alt"></i> LIHAT LOKASI DI GOOGLE MAPS
+                </a>
+                <a href="#" class="w-full md:w-auto px-6 py-3 bg-yellow-500 hover:bg-yellow-400 text-gray-900 rounded font-semibold transition-all hover:scale-105 hover:shadow-[0_0_15px_rgba(234,179,8,0.5)] flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp text-lg"></i> HUBUNGI KAMI VIA WHATSAPP
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- PROGRAM UNGGULAN SECTION -->
+    <section class="py-24 px-6 md:px-12 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500 inline-block mb-4">
+                    Program Unggulan
+                </h2>
+                <div class="h-1 w-24 bg-teal-500 mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Grid Kartu -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                
+                <!-- Kartu 1 -->
+                <div class="glass-card p-8 rounded-2xl reveal relative group overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-teal-500/10 rounded-full blur-2xl group-hover:bg-teal-500/20 transition-all"></div>
+                    <div class="w-14 h-14 bg-gradient-to-br from-teal-500 to-blue-600 rounded-xl flex items-center justify-center text-white text-2xl mb-6 shadow-lg">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-white group-hover:text-teal-300 transition-colors">Gratis Biaya Pendidikan</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Beasiswa penuh selama masa pendidikan untuk meringankan beban dan fokus pada pembelajaran.</p>
+                </div>
+
+                <!-- Kartu 2 -->
+                <div class="glass-card p-8 rounded-2xl reveal relative group overflow-hidden" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 bg-gradient-to-br from-teal-500 to-blue-600 rounded-xl flex items-center justify-center text-white text-2xl mb-6 shadow-lg">
+                        <i class="fas fa-laptop-house"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-white group-hover:text-teal-300 transition-colors">Fasilitas IT & Boarding Terbaik</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Asrama yang nyaman didukung dengan laboratorium komputer dan infrastruktur IT modern.</p>
+                </div>
+
+                <!-- Kartu 3 -->
+                <div class="glass-card p-8 rounded-2xl reveal relative group overflow-hidden" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 bg-gradient-to-br from-teal-500 to-blue-600 rounded-xl flex items-center justify-center text-white text-2xl mb-6 shadow-lg">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-white group-hover:text-teal-300 transition-colors">Uang Saku Selama Pendidikan</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Dukungan finansial bulanan untuk menunjang kebutuhan sehari-hari mahasantri.</p>
+                </div>
+
+                <!-- Kartu 4 -->
+                <div class="glass-card p-8 rounded-2xl reveal relative group overflow-hidden" style="transition-delay: 300ms;">
+                    <div class="w-14 h-14 bg-gradient-to-br from-teal-500 to-blue-600 rounded-xl flex items-center justify-center text-white text-2xl mb-6 shadow-lg">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-white group-hover:text-teal-300 transition-colors">Fokus IT Expert</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Kurikulum mendalam pada bidang Digital Marketing dan Pengembangan Perangkat Lunak (Software Development).</p>
+                </div>
+
+                <!-- Kartu 5 -->
+                <div class="glass-card p-8 rounded-2xl reveal relative group overflow-hidden" style="transition-delay: 400ms;">
+                    <div class="w-14 h-14 bg-gradient-to-br from-teal-500 to-blue-600 rounded-xl flex items-center justify-center text-white text-2xl mb-6 shadow-lg">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-white group-hover:text-teal-300 transition-colors">Sertifikasi + Tahfidz</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Mendapatkan bonus pelatihan sertifikasi kompetensi IT sekaligus program hafalan Al-Qur'an (Tahfidz).</p>
+                </div>
+
+                <!-- Kartu 6 -->
+                <div class="glass-card p-8 rounded-2xl reveal relative group overflow-hidden" style="transition-delay: 500ms;">
+                    <div class="w-14 h-14 bg-gradient-to-br from-teal-500 to-blue-600 rounded-xl flex items-center justify-center text-white text-2xl mb-6 shadow-lg">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-white group-hover:text-teal-300 transition-colors">Satu Tahun Siap Kerja</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Program intensif 1 tahun yang dirancang agar lulusan siap langsung terjun ke dunia profesional.</p>
+                </div>
+
+                <!-- Kartu 7 -->
+                <div class="glass-card p-8 rounded-2xl reveal relative group overflow-hidden" style="transition-delay: 600ms;">
+                    <div class="w-14 h-14 bg-gradient-to-br from-teal-500 to-blue-600 rounded-xl flex items-center justify-center text-white text-2xl mb-6 shadow-lg">
+                        <i class="fas fa-plane-departure"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-white group-hover:text-teal-300 transition-colors">Gratis Transportasi</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Pembiayaan penuh untuk pemberangkatan awal dan kepulangan setelah lulus program.</p>
+                </div>
+
+                <!-- Kartu 8 -->
+                <div class="glass-card p-8 rounded-2xl reveal relative group overflow-hidden" style="transition-delay: 700ms;">
+                    <div class="w-14 h-14 bg-gradient-to-br from-teal-500 to-blue-600 rounded-xl flex items-center justify-center text-white text-2xl mb-6 shadow-lg">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-white group-hover:text-teal-300 transition-colors">Pembinaan Karakter</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Pendidikan akhlak dan mental untuk membentuk generasi berkarakter, beradab, dan profesional.</p>
+                </div>
+
+                <!-- Kartu 9 -->
+                <div class="glass-card p-8 rounded-2xl reveal relative group overflow-hidden" style="transition-delay: 800ms;">
+                    <div class="w-14 h-14 bg-gradient-to-br from-teal-500 to-blue-600 rounded-xl flex items-center justify-center text-white text-2xl mb-6 shadow-lg">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-white group-hover:text-teal-300 transition-colors">Kerjasama Industri</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Jejaring kuat dengan Dunia Industri dan Dunia Pendidikan (DUDI) untuk penyaluran tenaga kerja.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INFORMATION & CONTACT SECTION -->
+    <section class="py-20 px-6 relative">
+        <!-- Dekorasi Background -->
+        <div class="glow-blob bg-blue-800 w-full md:w-1/2 h-64 bottom-0 left-1/4"></div>
+
+        <div class="max-w-5xl mx-auto glass-card rounded-3xl p-8 md:p-14 reveal relative z-10 border-t-4 border-t-teal-500">
+            <h2 class="text-3xl font-bold text-center mb-12 text-white">Pusat Informasi</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                <!-- Sosial Media -->
+                <div class="space-y-6">
+                    <h3 class="text-xl font-medium text-teal-400 border-b border-gray-700 pb-2 mb-4">Media Sosial</h3>
+                    
+                    <a href="#" class="flex items-center gap-5 group">
+                        <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-2xl text-pink-500 group-hover:bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 group-hover:text-white transition-all duration-300 shadow-md">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <span class="text-lg text-gray-300 group-hover:text-white transition-colors font-medium">@petik_jombang</span>
+                    </a>
+
+                    <a href="#" class="flex items-center gap-5 group">
+                        <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-2xl text-red-500 group-hover:bg-red-600 group-hover:text-white transition-all duration-300 shadow-md">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <span class="text-lg text-gray-300 group-hover:text-white transition-colors font-medium">@tvpetikjombang</span>
+                    </a>
+
+                    <a href="#" class="flex items-center gap-5 group">
+                        <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-2xl text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-md">
+                            <i class="fab fa-facebook-f"></i>
+                        </div>
+                        <span class="text-lg text-gray-300 group-hover:text-white transition-colors font-medium">@Petik Jombang</span>
+                    </a>
+                </div>
+
+                <!-- Kontak Langsung -->
+                <div class="space-y-6">
+                    <h3 class="text-xl font-medium text-teal-400 border-b border-gray-700 pb-2 mb-4">Hubungi Kami</h3>
+                    
+                    <a href="https://wa.me/6281393963363" class="flex items-center gap-5 group">
+                        <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-2xl text-green-500 group-hover:bg-green-500 group-hover:text-white transition-all duration-300 shadow-md">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-sm text-gray-400">WhatsApp Admin</span>
+                            <span class="text-lg text-gray-300 group-hover:text-white transition-colors font-medium">+62 813-9396-3363</span>
+                        </div>
+                    </a>
+
+                    <a href="mailto:petikjombang@gmail.com" class="flex items-center gap-5 group">
+                        <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-2xl text-gray-300 group-hover:bg-teal-500 group-hover:text-white transition-all duration-300 shadow-md">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-sm text-gray-400">Email Utama</span>
+                            <span class="text-lg text-gray-300 group-hover:text-white transition-colors font-medium">petikjombang@gmail.com</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-800 bg-slate-900 py-8 text-center mt-10">
+        <p class="text-gray-500 text-sm">
+            &copy; 2026 PeTIK Jombang. Pesantren Berbasis IT. All rights reserved.
+        </p>
+    </footer>
+
+    <!-- Script Javascript untuk Animasi Muncul (Scroll) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const reveals = document.querySelectorAll('.reveal');
+
+            const revealOnScroll = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // Optional: Jika ingin animasi hanya jalan 1x (tidak hilang saat discroll ke atas)
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                root: null,
+                threshold: 0.1, // Elemen mulai muncul saat 10% terlihat di layar
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            reveals.forEach(reveal => {
+                revealOnScroll.observe(reveal);
+            });
+        });
+    </script>
+</body>
+</html>
